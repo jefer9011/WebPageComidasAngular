@@ -15,8 +15,7 @@ export class ProductosService {
 
     this.cargarProductos();
   }
-
-
+  
   private cargarProductos() {
 
     return new Promise (  ( resolve, reject  )  =>  {
@@ -62,7 +61,8 @@ private filtrarProductos( termino: string ) {
   termino = termino.toLocaleLowerCase();
   this.productos.forEach( prod => {
     const tituloLower = prod.titulo.toLocaleLowerCase();
-    if (  prod.categoria.indexOf( termino ) >= 0 || tituloLower.indexOf(termino) >= 0 )  {
+    const categoriaLower = prod.categoria.toLocaleLowerCase();
+    if (  tituloLower.indexOf( termino ) >= 0 || tituloLower.indexOf(termino) >= 0 )  {
       this.productosFiltrado.push(prod);
     }
   });

@@ -15,7 +15,7 @@ export class ProductosService {
 
     this.cargarProductos();
   }
-  
+
   private cargarProductos() {
 
     return new Promise (  ( resolve, reject  )  =>  {
